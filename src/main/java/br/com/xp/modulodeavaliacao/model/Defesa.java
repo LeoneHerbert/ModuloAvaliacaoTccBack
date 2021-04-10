@@ -1,5 +1,6 @@
 package br.com.xp.modulodeavaliacao.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -9,7 +10,7 @@ import java.time.LocalDate;
 
 @Data
 @Entity
-@Table(name = "defesa")
+@Table(name = "defesas")
 public class Defesa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,4 +27,9 @@ public class Defesa {
     @NotEmpty
     @Column
     private String status;
+
+    @JsonIgnore
+    @OneToOne
+    @JoinColumn(name = "banca_id", nullable = false )
+    private Banca banca;
 }

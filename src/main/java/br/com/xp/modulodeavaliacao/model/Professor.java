@@ -6,7 +6,7 @@ import javax.validation.constraints.NotEmpty;
 
 @Data
 @Entity
-@Table(name = "professor")
+@Table(name = "professors")
 public class Professor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,4 +39,12 @@ public class Professor {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "curso_id")
     private Curso curso;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "departamento_id")
+    private Departamento departamento;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "titulacao_id")
+    private Titulacao titulacao;
 }

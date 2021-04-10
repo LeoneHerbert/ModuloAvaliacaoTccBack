@@ -8,7 +8,7 @@ import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "curso")
+@Table(name = "cursos")
 public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,4 +25,10 @@ public class Curso {
     @NotEmpty
     @Column
     private String formacao;
+
+    @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
+    private Set<Aluno> alunos = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
+    private Set<Professor> professores = new LinkedHashSet<>();
 }

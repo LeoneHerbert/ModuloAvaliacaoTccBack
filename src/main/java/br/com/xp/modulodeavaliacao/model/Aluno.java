@@ -6,7 +6,7 @@ import javax.validation.constraints.NotEmpty;
 
 @Data
 @Entity
-@Table(name = "aluno")
+@Table(name = "alunos")
 public class Aluno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,4 +23,8 @@ public class Aluno {
     @NotEmpty
     @Column(unique = true)
     private String email;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "curso_id")
+    private Curso curso;
 }

@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
-@Table(name = "tcc")
+@Table(name = "tccs")
 public class Tcc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,4 +29,14 @@ public class Tcc {
     @Column(name = "percentual_conclusao")
     private Integer percentualDeConclusao;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "professor_id")
+    private Professor professor;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "aluno_id")
+    private Aluno aluno;
+
+    @OneToOne(mappedBy = "tcc", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Banca banca;
 }

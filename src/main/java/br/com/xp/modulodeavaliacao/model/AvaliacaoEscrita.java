@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 
 @Data
 @Entity
-@Table(name = "avaliacao_escrita")
+@Table(name = "avaliacao_escritas")
 public class AvaliacaoEscrita {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,4 +42,8 @@ public class AvaliacaoEscrita {
     @NotEmpty
     @Column(name = "comentario_normalizacao")
     private String comentarioDaNormalizacao;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "detalhe_banca_id")
+    private DetalheDaBanca detalheDaBanca;
 }
