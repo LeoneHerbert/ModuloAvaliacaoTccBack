@@ -5,3 +5,5 @@ CREATE TABLE cursos (
              formacao VARCHAR(100) NOT NULL,
              PRIMARY KEY (id)
 ) engine=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO cursos (sigla, nome, formacao) VALUES ('SI', 'Sistemas de Informação', 'Bacharel em Sistemas de Informação');

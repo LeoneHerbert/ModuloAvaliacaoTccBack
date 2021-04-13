@@ -14,3 +14,5 @@ CREATE TABLE professors (
         FOREIGN KEY(titulacao_id) REFERENCES titulacaos(id),
         PRIMARY KEY(id)
 ) engine=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO professors (matricula, nome, email,telefone,area_atuacao,lattes,curso_id,departamento_id,titulacao_id) VALUES ('1982360', 'Mauro Lopes Carvalho Silva', 'maurosilva@ifma.edu.br','98 98125-3236','Sistemas Distribuídos, Desenvolvimento Mobile, Internet das Coisas','http://lattes.cnpq.br/9247560603541505',1,1,3);

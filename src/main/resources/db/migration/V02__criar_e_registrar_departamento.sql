@@ -4,3 +4,5 @@ CREATE TABLE departamentos (
              nome VARCHAR(100) NOT NULL,
              PRIMARY KEY (id)
 ) engine=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO departamentos (sigla, nome) VALUES ('DCOMP', 'Departamento de Computação');
