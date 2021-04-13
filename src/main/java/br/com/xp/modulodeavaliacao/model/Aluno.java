@@ -1,5 +1,6 @@
 package br.com.xp.modulodeavaliacao.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -24,6 +25,7 @@ public class Aluno {
     @Column(unique = true)
     private String email;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "curso_id")
     private Curso curso;
